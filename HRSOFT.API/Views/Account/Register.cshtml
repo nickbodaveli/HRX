@@ -1,0 +1,58 @@
+﻿@using HRSOFT.Application.Feature.Commands.Authentication.Register
+@model UserRegisterCommand
+
+
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="RepeatPassword"></label>
+        <input asp-for="RepeatPassword" type="password" />
+        <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="PrivateNumber"></label>
+        <input asp-for="PrivateNumber" type="PrivateNumber" />
+        <span asp-validation-for="PrivateNumber" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="DateOfBirht"></label>
+        <input asp-for="DateOfBirht" type="date" />
+        <span asp-validation-for="DateOfBirht" class="text-danger"></span>
+    </div>
+    <div>
+        <input type="submit" value="Register" />
+    </div>
+</form>

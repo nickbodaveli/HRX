@@ -1,0 +1,69 @@
+﻿@using HRSOFT.Application.Feature.Commands.Employee.Create
+@using HRSOFT.Domain
+@model EmployeeCreateCommand
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<form asp-action="Create" method="post" class="container mt-5">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PrivateNumber" class="form-label"></label>
+        <input asp-for="PrivateNumber" type="text" class="form-control" />
+        <span asp-validation-for="PrivateNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Position" class="form-label"></label>
+        <input asp-for="Position" type="text" class="form-control" />
+        <span asp-validation-for="Position" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" type="email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DateOfBirht" class="form-label"></label>
+        <input asp-for="DateOfBirht" type="date" class="form-control" />
+        <span asp-validation-for="DateOfBirht" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="MobileNumber" class="form-label"></label>
+        <input asp-for="MobileNumber" type="tel" class="form-control" />
+        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <select asp-for="Status" asp-items="@Html.GetEnumSelectList<EmployeeStatus>()" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+
+

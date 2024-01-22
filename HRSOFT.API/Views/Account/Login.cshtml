@@ -1,0 +1,28 @@
+﻿@using HRSOFT.Application.Feature.Commands.Authentication.Login
+@model UserLoginCommand
+
+
+@if (TempData["ErrorMessage"] != null)
+{
+        <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+        </div>
+}
+
+<h2>Login</h2>
+
+<form asp-action="Login" method="post">
+    <div>
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div>
+        <input type="submit" value="Login" />
+    </div>
+</form>

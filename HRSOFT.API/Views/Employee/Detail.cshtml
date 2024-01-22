@@ -1,0 +1,23 @@
+﻿@using HRSOFT.Domain.Common
+@model Employee
+
+
+<div class="container mt-5">
+    <div class="card mx-auto" style="max-width: 400px;">
+        <img src="https://www.w3schools.com/bootstrap4/img_avatar1.png" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name @Model.LastName</h5>
+            <p class="card-text">Date of Birth: @Model.DateOfBirht</p>
+            <p class="card-text">Private Number: @Model.PrivateNumber</p>
+            <p class="card-text">Position: @Model.Position</p>
+            <p class="card-text">Mobile Number: @Model.MobileNumber</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Status
+                <span class="badge badge-primary badge-pill">@Model.Status</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
